@@ -10,21 +10,16 @@ h1 {
 
 h2 {
 
-	font-size: 30px !important;
+	font-size: 29px !important;
 	font-weight: 700 !important;
 	font-family: 'Open Sans', sans-serif; !important;
-	padding-bottom: 15px !important;
+	padding-bottom: 10px !important;
 }
 
-/* for topic pages and home page to fix the spacing we wanted only on content pages */
-.spacing-h2 {
-
-	margin-bottom: -15px !important;
-}
 
 h3 {
 
-	font-size: 23px !important;
+	font-size: 22px !important;
 	font-weight: 700 !important;
 	font-family: 'Open Sans', sans-serif;
 
@@ -33,7 +28,7 @@ h3 {
 
 h4 {
 
-	font-size: 20px !important;
+	font-size: 19px !important;
 	font-weight: 700 !important;
 font-family: 'Open Sans', sans-serif;
 }
@@ -49,15 +44,15 @@ font-family: 'Open Sans', sans-serif;
 
 
 body, header, nav#wb-bc {
-
-
+	
+	
 	background-color: white !important;
 	font-family: 'Open Sans', sans-serif;
-
+	
 	}
 
-
-
+	
+	
 
 @media screen and (max-width: 991px) {
 
@@ -70,23 +65,11 @@ h1 {
 
 
 /* On this page, reducing size as an h2*/
-.onpage {
+.smh3 {
 
-	font-size: 20px !important;
+	font-size: 22px !important;
 	font-weight: 700 !important;
-	margin-bottom: 5px !important;
-
-}
-
-/* special size for h3s on a Task Template */
-.th3
-
-{
-
-	font-size: 30px !important;
-	font-weight: 700 !important;
-	padding-bottom: 10px !important;
-
+	margin-bottom: 0px !important;
 
 }
 
@@ -109,29 +92,27 @@ p, ul, li {
 
 }
 
-
 td {
-
+	
 	font-size: 19px !important;
 	font-family: 'Open Sans', sans-serif; !important;
-
+	
 }
 
 caption, th {
-
+	
 	font-size: 17px !important;
 	font-family: 'Open Sans', sans-serif; !important;
-
+	
 }
-
 
 /* controls bullet spacing */
 
 .bullet {
-
-	padding-top: 3px !important;
-	padding-bottom: 3px !important;
-
+	
+	padding-top: 3px !important;	
+	padding-bottom: 3px !important;	
+	
 }
 
 /* font size in li of breadcrumb */
@@ -154,13 +135,22 @@ caption, th {
 
 
 .list-group-item {
-
-
+	
+	
 background-color: #F8F8F8;
-
+	
 	}
 
+/* menu items */
 
+.cust-small   {
+
+	margin-top: -3px !important;
+	font-size: 16px !important;
+	
+
+
+}
 
 /* for the active menu item color */
 
@@ -171,7 +161,7 @@ background-color: #F8F8F8;
 
 }
 
-.ch5 {
+.ch5 { 
 
 	font-size: 18px !important;
 
