@@ -117,7 +117,7 @@ td {
 
 }
 
-caption, th {
+caption, th, summary {
 
 	font-size: 17px !important;
 	font-family: 'Open Sans', sans-serif; !important;
