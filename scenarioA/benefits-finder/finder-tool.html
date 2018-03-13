@@ -155,11 +155,1301 @@ p, li {max-width: 65em;}
 </style>
 
 
-<main role="main" property="mainContentOfPage" class="container">
+<main property="mainContentOfPage" role="main" class="container">
+		<h1 property="name" id="wb-cont" data-prop="navaid">Benefits finder</h1>
+		<p>
+		Answer the questions below to get a customized list of benefits for which you may be eligible.  The Benefits Finder may suggest benefits from federal, provincial or territorial governments, and does not collect or track your information. The more questions you answer, the more customized your results will be.
+		</p>
+<form data-persist="garlic" id='bf-qform' action='' method='put' onSubmit="isItCaregiver()" >
+      <div>
+<input type="hidden" name="bfemail" value="" />
+<script>
+/* <![CDATA[ */
+
+function isItCaregiver () {
+	var qForm = document.getElementById('bf-qform');
+	alert("hi");
+	alert(qForm.getElementByID[careQ].value);
+	if (qForm.elements[careQ].value = '1') {
+		alert('1');
+	} else {
+		alert('2');
+	}
+	return false;
+}
+
+function setToDefault(_inputName, _defaultValue) { 
+    var qForm = document.getElementById('bf-qform');
+	if(qForm != null){
+	    if (qForm.elements[_inputName].length == null) {
+			qForm.elements[_inputName].value = '';
+		} else {
+			for (var i = (qForm.elements[_inputName].length - 1); i >= 0; i--) {
+	    		if ((qForm.elements[_inputName][i].value.toString() == _defaultValue.toString()) && (qForm.elements[_inputName][i].checked == false)) {
+					qForm.elements[_inputName][i].checked = true;
+				} else if ((qForm.elements[_inputName][i].value.toString() != _defaultValue.toString()) && (qForm.elements[_inputName][i].checked == true)) {
+					qForm.elements[_inputName][i].checked = false;
+					qForm.elements[_inputName].value = '';
+				}
+			}
+		}
+	}
+}
+function blockOrUnblock(_inputName, _questionDivId, _value) { 
+	var qForm = document.getElementById('bf-qform');
+	if(qForm != null){
+			if (_inputName == "q15") {
+					if (_value == "1") {
+						document.getElementById("div_25").style.display = "block";
+							qForm.q25show.value="1";
+					}
+					if (_value == "6") {
+						document.getElementById("div_25").style.display = "block";
+							qForm.q25show.value="1";
+					}
+					if (_value == "7") {
+						document.getElementById("div_25").style.display = "none";
+							setToDefault('q25','4');
+							qForm.q25show.value="0";
+					}
+					if (_value == "1") {
+						document.getElementById("div_26").style.display = "none";
+							setToDefault('q26','7');
+							qForm.q26show.value="0";
+					}
+					if (_value == "6") {
+						document.getElementById("div_26").style.display = "none";
+							setToDefault('q26','7');
+							qForm.q26show.value="0";
+					}
+					if (_value == "7") {
+						document.getElementById("div_26").style.display = "none";
+							setToDefault('q26','7');
+							qForm.q26show.value="0";
+					}
+			}
+			if (_inputName == "q5") {
+					if (_value == "1") {
+						document.getElementById("div_21").style.display = "block";
+							qForm.q21show.value="1";
+					}
+					if (_value == "2") {
+						document.getElementById("div_21").style.display = "block";
+							qForm.q21show.value="1";
+					}
+					if (_value == "3") {
+						document.getElementById("div_21").style.display = "block";
+							qForm.q21show.value="1";
+					}
+					if (_value == "4") {
+						document.getElementById("div_21").style.display = "none";
+							setToDefault('q21','2');
+							qForm.q21show.value="0";
+					}
+					if (_value == "5") {
+						document.getElementById("div_21").style.display = "none";
+							setToDefault('q21','2');
+							qForm.q21show.value="0";
+					}
+			}
+			if (_inputName == "q25") {
+					if (_value == "1") {
+						document.getElementById("div_26").style.display = "none";
+							setToDefault('q26','7');
+							qForm.q26show.value="0";
+					}
+					if (_value == "2") {
+						document.getElementById("div_26").style.display = "none";
+							setToDefault('q26','7');
+							qForm.q26show.value="0";
+					}
+					if (_value == "3") {
+						document.getElementById("div_26").style.display = "block";
+							qForm.q26show.value="1";
+					}
+					if (_value == "4") {
+						document.getElementById("div_26").style.display = "none";
+							setToDefault('q26','7');
+							qForm.q26show.value="0";
+					}
+			}
+			if (_inputName == "q11") {
+					if (_value == "1") {
+						document.getElementById("div_19").style.display = "block";
+							qForm.q19show.value="1";
+					}
+					if (_value == "2") {
+						document.getElementById("div_19").style.display = "block";
+							qForm.q19show.value="1";
+					}
+					if (_value == "3") {
+						document.getElementById("div_19").style.display = "block";
+							qForm.q19show.value="1";
+					}
+					if (_value == "4") {
+						document.getElementById("div_19").style.display = "block";
+							qForm.q19show.value="1";
+					}
+					if (_value == "5") {
+						document.getElementById("div_19").style.display = "block";
+							qForm.q19show.value="1";
+					}
+			}
+			if (_inputName == "q22") {
+					if (_value == "1") {
+						document.getElementById("div_24").style.display = "none";
+							setToDefault('q24','3');
+							qForm.q24show.value="0";
+					}
+					if (_value == "2") {
+						document.getElementById("div_24").style.display = "block";
+							qForm.q24show.value="1";
+					}
+					if (_value == "3") {
+						document.getElementById("div_24").style.display = "block";
+							qForm.q24show.value="1";
+					}
+					if (_value == "4") {
+						document.getElementById("div_24").style.display = "block";
+							qForm.q24show.value="1";
+					}
+					if (_value == "1") {
+						document.getElementById("div_27").style.display = "none";
+							setToDefault('q27','');
+							qForm.q27show.value="0";
+					}
+					if (_value == "2") {
+						document.getElementById("div_27").style.display = "block";
+							qForm.q27show.value="1";
+					}
+					if (_value == "3") {
+						document.getElementById("div_27").style.display = "none";
+							setToDefault('q27','');
+							qForm.q27show.value="0";
+					}
+					if (_value == "4") {
+						document.getElementById("div_27").style.display = "none";
+							setToDefault('q27','');
+							qForm.q27show.value="0";
+					}
+			}
+			if (_inputName == "q18") {
+					if (_value == "4") {
+						document.getElementById("div_20").style.display = "block";
+							qForm.q20show.value="1";
+					}
+					if (_value == "1") {
+						document.getElementById("div_20").style.display = "block";
+							qForm.q20show.value="1";
+					}
+					if (_value == "3") {
+						document.getElementById("div_20").style.display = "block";
+							qForm.q20show.value="1";
+					}
+					if (_value == "7") {
+						document.getElementById("div_20").style.display = "block";
+							qForm.q20show.value="1";
+					}
+					if (_value == "2") {
+						document.getElementById("div_20").style.display = "block";
+							qForm.q20show.value="1";
+					}
+					if (_value == "6") {
+						document.getElementById("div_20").style.display = "block";
+							qForm.q20show.value="1";
+					}
+					if (_value == "5") {
+						document.getElementById("div_20").style.display = "none";
+							setToDefault('q20','4');
+							qForm.q20show.value="0";
+					}
+			}
+			if (_inputName == "q28") {
+					if (_value == "1") {
+						document.getElementById("div_18").style.display = "block";
+							qForm.q18show.value="1";
+					}
+					if (_value == "2") {
+						document.getElementById("div_18").style.display = "none";
+							setToDefault('q18','');
+							qForm.q18show.value="0";
+					}
+					if (_value == "3") {
+						document.getElementById("div_18").style.display = "block";
+							qForm.q18show.value="1";
+					}
+					if (_value == "4") {
+						document.getElementById("div_18").style.display = "none";
+							setToDefault('q18','');
+							qForm.q18show.value="0";
+					}
+					if (_value == "1") {
+						document.getElementById("div_20").style.display = "block";
+							qForm.q20show.value="1";
+					}
+					if (_value == "2") {
+						document.getElementById("div_20").style.display = "none";
+							setToDefault('q20','4');
+							qForm.q20show.value="0";
+					}
+					if (_value == "3") {
+						document.getElementById("div_20").style.display = "block";
+							qForm.q20show.value="1";
+					}
+					if (_value == "4") {
+						document.getElementById("div_20").style.display = "none";
+							setToDefault('q20','4');
+							qForm.q20show.value="0";
+					}
+			}
+	}
+} 
+function ensureSomethingChecked(_inputName, _negativeOptionValue, _questionDivId, _value, _blockOrUnblock, _isChecked) {
+  var qForm = document.getElementById('bf-qform');
+  if(qForm != null){
+	  var negativeOptionIndex = -1;
+	  var firstIndexChecked = -1;
+	  for (var i = (qForm.elements[_inputName].length - 1); i >= 0; i--) {
+	    if (qForm.elements[_inputName][i].value.toString() == _negativeOptionValue.toString()) {
+			negativeOptionIndex = i;
+		}
+	  	if (qForm.elements[_inputName][i].checked) {
+			firstIndexChecked = i;
+		}
+	  }
+	  if (firstIndexChecked == -1) {
+		qForm.elements[_inputName][negativeOptionIndex].checked = true;
+		if (_questionDivId != null) {
+			blockOrUnblock(_inputName, _questionDivId, _negativeOptionValue);
+		}
+	  } else {
+	  	if (_questionDivId != null) {
+			blockOrUnblock(_inputName, _questionDivId, qForm.elements[_inputName][firstIndexChecked].value);
+		}
+	  }
+  }
+}
+function uncheckAllExceptNegativeOption(_inputName, _negativeOptionValue, _questionDivId, _value, _blockOrUnblock, _isChecked) {
+  var qForm = document.getElementById('bf-qform');
+  if(qForm != null){
+	  for (var i=0; i < qForm.elements[_inputName].length;i++) {
+	    if ((qForm.elements[_inputName][i].value.toString() != _negativeOptionValue.toString()) && (qForm.elements[_inputName][i].checked == true )) {
+		   qForm.elements[_inputName][i].checked = false;
+		}
+	  }
+	  ensureSomethingChecked(_inputName, _negativeOptionValue, _questionDivId, _value, _blockOrUnblock, _isChecked);
+  }
+}
+function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId, _value, _blockOrUnblock, _isChecked) {
+  var qForm = document.getElementById('bf-qform');
+  if(qForm != null){
+	  for (var i=0; i < qForm.elements[_inputName].length;i++) {
+	    if ((qForm.elements[_inputName][i].value.toString() == _negativeOptionValue.toString()) && (qForm.elements[_inputName][i].checked == true )) {
+		   qForm.elements[_inputName][i].checked = false;
+		}
+	  }
+	  ensureSomethingChecked(_inputName, _negativeOptionValue, _questionDivId, _value, _blockOrUnblock, _isChecked);
+  }
+}
+/* ]]> */
+</script>
+<input type="hidden" name="lang" value="eng" />
+<input type="hidden" name="ws" value="true" />
+<!-- 
+<input type="hidden" name="geo" value="" />
+-->
 
 
-<p> I am where the benefits finder lives: someone please build me in Survey Gizmo! </p>
-    </main>
+		<div class="bfQuestion form-group">
+    			<label class="nohighlight h4" for="cbgeo"><strong>1&nbsp;.</strong> Select your province or territory: </label>
+			    <select class="form-control" name="cbgeo" id="cbgeo">
+    				<option  value="99">&zwnj;Display only Federal programs</option>
+<option  value="1">British Columbia</option>
+<option  value="2">Alberta</option>
+<option  value="3">Saskatchewan</option>
+<option  value="4">Manitoba</option>
+<option  value="5">Ontario</option>
+<option  value="6">Quebec</option>
+<option  value="7">New Brunswick</option>
+<option  value="8">Prince Edward Island</option>
+<option  value="9">Nova Scotia</option>
+<option  value="10">Newfoundland and Labrador</option>
+<option  value="11">Nunavut</option>
+<option  value="12">Northwest Territories</option>
+<option  value="13">Yukon</option>
+    			</select>
+		</div>
+		<div class="bfQuestion form-group">
+				<label class="nohighlight h4" for="q1">
+				<strong>2&nbsp;.</strong>
+				What is your age?
+				</label>
+				<input class="form-control" name="q1" id="q1" size="3" maxlength="3" value="" />
+			</div>
+		<div class="bfQuestion form-group">
+				<label class="nohighlight h4" for="q22">
+				<strong>3&nbsp;.</strong>
+				What is your marital status?
+				</label>
+                  <select class="form-control" id="q22"
+                    name="q22"
+                      onchange="blockOrUnblock('q22', 'div_24', this.value)"
+>
+              <option value="1" 
+							selected="selected"
+              >Single</option>
+              <option value="2" 
+              >Married / Living common-law</option>
+              <option value="3" 
+              >Separated / Divorced</option>
+              <option value="4" 
+              >Widowed</option>
+          </select>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('<input type="hidden" name="q27show" value="0" />');
+				/* ]]> */
+				</script>
+				<noscript>
+        <div>
+				<input type="hidden" name="q27show" value="1" />
+        </div>
+				</noscript>
+			<!-- <blockquote> -->
+			<div class="indent">
+			<script>
+					/* <![CDATA[ */
+					document.write('<div id="div_27"');
+					document.write('style="display:none">');
+					/* ]]> */
+			</script>
+		<div class="bfQuestion form-group">
+				<label class="nohighlight h4" for="q27">
+				<strong>3a.</strong>
+				What is the age of your spouse or common-law partner?
+				</label>
+				<input class="form-control" name="q27" id="q27" size="3" maxlength="3" value="" />
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('</'+'div>');
+				/* ]]> */
+				</script>
+				<!-- </blockquote> --> </div>
+				<script>
+				/* <![CDATA[ */
+				document.write('<input type="hidden" name="q24show" value="0" />');
+				/* ]]> */
+				</script>
+				<noscript>
+        <div>
+				<input type="hidden" name="q24show" value="1" />
+        </div>
+				</noscript>
+			<!-- <blockquote> -->
+			<div class="indent">
+			<script>
+					/* <![CDATA[ */
+					document.write('<div id="div_24"');
+					document.write('style="display:none">');
+					/* ]]> */
+			</script>
+		<div class="bfQuestion form-group">
+				<fieldset class="bffieldset">
+				<legend class="bflegend h4">
+					<strong>3&nbsp;b.</strong>
+					In addition to your current marital status, have you previously been:
+					<br />
+					<span class="h6">(Check all that apply)</span>
+				</legend>
+						<div class="checkbox">
+						<label class="nohighlight" for="q24_1">
+						<input type="checkbox" 
+							id="q24_1"
+							name="q24"
+									onclick="uncheckNegativeOption('q24', '3', null, 1, null, this.checked)" 
+							value="1"
+							/>
+						Separated / Divorced</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q24_2">
+						<input type="checkbox" 
+							id="q24_2"
+							name="q24"
+									onclick="uncheckNegativeOption('q24', '3', null, 2, null, this.checked)" 
+							value="2"
+							/>
+						Widowed</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q24_3">
+						<input type="checkbox" 
+							id="q24_3"
+							name="q24"
+									onclick="uncheckAllExceptNegativeOption('q24','3', null, 3, null, this.checked)" 
+							value="3"
+							checked="checked"
+							/>
+						None of the above</label></div>
+				</fieldset>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('</'+'div>');
+				/* ]]> */
+				</script>
+				<!-- </blockquote> --> </div>
+		<div class="bfQuestion form-group">
+				<label class="nohighlight h4" for="q23">
+				<strong>4.</strong>
+				Do you consider your household income to be low?
+				</label>
+                  <select class="form-control" id="q23"
+                    name="q23"
+>
+              <option value="1" 
+              >Yes</option>
+              <option value="2" 
+              >No</option>
+              <option value="3" 
+							selected="selected"
+              >Not sure</option>
+          </select>
+			</div>
+			
+			<div class="bfQuestion form-group">
+		<label class="nohighlight h4" for="careQ">
+		<strong>5.</strong>
+		Are you missing or will you miss work to care for someone who is ill?
+		</label>
+		  <select class="form-control" id="careQ"
+			name="careQ"
+>
+	  <option value="1" 
+	  >Yes</option>
+	  <option value="2" selected="selected"
+	  >No</option>
+  </select>
+ </div>
+ 
+		<div class="bfQuestion form-group">
+				<label class="nohighlight h4" for="q2">
+				<strong>6.</strong>
+				What is your employment situation?
+				</label>
+                  <select class="form-control" id="q2"
+                    name="q2"
+>
+              <option value="1" 
+							selected="selected"
+              >Employed / Self-employed</option>
+              <option value="2" 
+              >Unemployed, seeking work</option>
+              <option value="3" 
+              >Other</option>
+          </select>
+			</div>
+		<div class="bfQuestion form-group">
+				<fieldset class="bffieldset">
+				<legend class="bflegend h4">
+					<strong>7.</strong>
+					What best describes your health situation?
+					<br />
+					<span class="h6">(Check all that apply)</span>
+				</legend>
+						<div class="checkbox">
+						<label class="nohighlight" for="q4_1">
+						<input type="checkbox" 
+							id="q4_1"
+							name="q4"
+									onclick="uncheckNegativeOption('q4', '4', null, 1, null, this.checked)" 
+							value="1"
+							/>
+						Living with a mental or physical disability</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q4_2">
+						<input type="checkbox" 
+							id="q4_2"
+							name="q4"
+									onclick="uncheckNegativeOption('q4', '4', null, 2, null, this.checked)" 
+							value="2"
+							/>
+						Chronically or seriously ill</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q4_8">
+						<input type="checkbox" 
+							id="q4_8"
+							name="q4"
+									onclick="uncheckNegativeOption('q4', '4', null, 8, null, this.checked)" 
+							value="8"
+							/>
+						Experiencing mental illness</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q4_5">
+						<input type="checkbox" 
+							id="q4_5"
+							name="q4"
+									onclick="uncheckNegativeOption('q4', '4', null, 5, null, this.checked)" 
+							value="5"
+							/>
+						Living with an addiction</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q4_6">
+						<input type="checkbox" 
+							id="q4_6"
+							name="q4"
+									onclick="uncheckNegativeOption('q4', '4', null, 6, null, this.checked)" 
+							value="6"
+							/>
+						In need of counselling</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q4_3">
+						<input type="checkbox" 
+							id="q4_3"
+							name="q4"
+									onclick="uncheckNegativeOption('q4', '4', null, 3, null, this.checked)" 
+							value="3"
+							/>
+						In need of dental surgery, prescription drugs or lenses</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q4_7">
+						<input type="checkbox" 
+							id="q4_7"
+							name="q4"
+									onclick="uncheckNegativeOption('q4', '4', null, 7, null, this.checked)" 
+							value="7"
+							/>
+						In need of medical equipment or other assistance</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q4_4">
+						<input type="checkbox" 
+							id="q4_4"
+							name="q4"
+									onclick="uncheckAllExceptNegativeOption('q4','4', null, 4, null, this.checked)" 
+							value="4"
+							checked="checked"
+							/>
+						No health concerns or not applicable</label></div>
+				</fieldset>
+			</div>
+		<div class="bfQuestion form-group">
+				<fieldset class="bffieldset">
+				<legend class="bflegend h4">
+					<strong>8.</strong>
+					Do you have children or are you a legal guardian?
+					<br />
+					<span class="h6">(Check all that apply)</span>
+				</legend>
+						<div class="checkbox">
+						<label class="nohighlight" for="q28_1">
+						<input type="checkbox" 
+							id="q28_1"
+							name="q28"
+									onclick="uncheckNegativeOption('q28', '4', 'div_18', 1, 'block', this.checked)" 
+							value="1"
+							/>
+						Yes</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q28_3">
+						<input type="checkbox" 
+							id="q28_3"
+							name="q28"
+									onclick="uncheckNegativeOption('q28', '4', 'div_18', 3, 'block', this.checked)" 
+							value="3"
+							/>
+						I am adopting or I am a foster parent</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q28_2">
+						<input type="checkbox" 
+							id="q28_2"
+							name="q28"
+									onclick="uncheckNegativeOption('q28', '4', 'div_18', 2, 'none', this.checked)" 
+							value="2"
+							/>
+						I am expecting</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q28_4">
+						<input type="checkbox" 
+							id="q28_4"
+							name="q28"
+									onclick="uncheckAllExceptNegativeOption('q28','4', 'div_18', 4, 'none', this.checked)" 
+							value="4"
+							checked="checked"
+							/>
+						No</label></div>
+				</fieldset>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('<input type="hidden" name="q18show" value="0" />');
+				/* ]]> */
+				</script>
+				<noscript>
+        <div>
+				<input type="hidden" name="q18show" value="1" />
+        </div>
+				</noscript>
+			<!-- <blockquote> -->
+			<div class="indent">
+			<script>
+					/* <![CDATA[ */
+					document.write('<div id="div_18"');
+					document.write('style="display:none">');
+					/* ]]> */
+			</script>
+		<div class="bfQuestion form-group">
+				<fieldset class="bffieldset">
+				<legend class="bflegend h4">
+					<strong>8 a.</strong>
+					What are the ages of the children under your care?
+					<br />
+					<span class="h6">(Check all that apply)</span>
+				</legend>
+						<div class="checkbox">
+						<label class="nohighlight" for="q18_1">
+						<input type="checkbox" 
+							id="q18_1"
+							name="q18"
+									onclick="blockOrUnblock('q20', 'div_20', '4')"
+							value="1"
+							/>
+						Less than 12 months old</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q18_3">
+						<input type="checkbox" 
+							id="q18_3"
+							name="q18"
+									onclick="blockOrUnblock('q20', 'div_20', '4')"
+							value="3"
+							/>
+						Between the ages of 1 and 6</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q18_7">
+						<input type="checkbox" 
+							id="q18_7"
+							name="q18"
+									onclick="blockOrUnblock('q20', 'div_20', '4')"
+							value="7"
+							/>
+						Between the ages of 7 and 12</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q18_8">
+						<input type="checkbox" 
+							id="q18_8"
+							name="q18"
+							value="8"
+							/>
+						Between the ages of 13 and 17</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q18_2">
+						<input type="checkbox" 
+							id="q18_2"
+							name="q18"
+									onclick="blockOrUnblock('q20', 'div_20', '4')"
+							value="2"
+							/>
+						18 years of age or older</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q18_6">
+						<input type="checkbox" 
+							id="q18_6"
+							name="q18"
+									onclick="blockOrUnblock('q20', 'div_20', '4')"
+							value="6"
+							/>
+						My child or children are independent</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q18_10">
+						<input type="checkbox" 
+							id="q18_10"
+							name="q18"
+							value="10"
+							/>
+						No child / Does not apply</label></div>
+				</fieldset>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('</'+'div>');
+				/* ]]> */
+				</script>
+				<!-- </blockquote> --> </div>
+				<script>
+				/* <![CDATA[ */
+				document.write('<input type="hidden" name="q20show" value="0" />');
+				/* ]]> */
+				</script>
+				<noscript>
+        <div>
+				<input type="hidden" name="q20show" value="1" />
+        </div>
+				</noscript>
+			<!-- <blockquote> -->
+			<div class="indent">
+			<script>
+					/* <![CDATA[ */
+					document.write('<div id="div_20"');
+					document.write('style="display:none">');
+					/* ]]> */
+			</script>
+		<div class="bfQuestion form-group">
+				<fieldset class="bffieldset">
+				<legend class="bflegend h4">
+					<strong>8 b.</strong>
+					What are the health situations of the children under your care?
+					<br />
+					<span class="h6">(Check all that apply)</span>
+				</legend>
+						<div class="checkbox">
+						<label class="nohighlight" for="q20_1">
+						<input type="checkbox" 
+							id="q20_1"
+							name="q20"
+									onclick="uncheckNegativeOption('q20', '4', null, 1, null, this.checked)" 
+							value="1"
+							/>
+						Living with a mental or physical disability</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q20_2">
+						<input type="checkbox" 
+							id="q20_2"
+							name="q20"
+									onclick="uncheckNegativeOption('q20', '4', null, 2, null, this.checked)" 
+							value="2"
+							/>
+						Chronically or seriously ill</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q20_8">
+						<input type="checkbox" 
+							id="q20_8"
+							name="q20"
+									onclick="uncheckNegativeOption('q20', '4', null, 8, null, this.checked)" 
+							value="8"
+							/>
+						Experiencing mental illness</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q20_5">
+						<input type="checkbox" 
+							id="q20_5"
+							name="q20"
+									onclick="uncheckNegativeOption('q20', '4', null, 5, null, this.checked)" 
+							value="5"
+							/>
+						Living with an addiction</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q20_6">
+						<input type="checkbox" 
+							id="q20_6"
+							name="q20"
+									onclick="uncheckNegativeOption('q20', '4', null, 6, null, this.checked)" 
+							value="6"
+							/>
+						In need of counselling</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q20_3">
+						<input type="checkbox" 
+							id="q20_3"
+							name="q20"
+									onclick="uncheckNegativeOption('q20', '4', null, 3, null, this.checked)" 
+							value="3"
+							/>
+						In need of dental surgery, prescription drugs or lenses</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q20_9">
+						<input type="checkbox" 
+							id="q20_9"
+							name="q20"
+									onclick="uncheckNegativeOption('q20', '4', null, 9, null, this.checked)" 
+							value="9"
+							/>
+						In need of medical equipment or other assistance</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q20_4">
+						<input type="checkbox" 
+							id="q20_4"
+							name="q20"
+									onclick="uncheckAllExceptNegativeOption('q20','4', null, 4, null, this.checked)" 
+							value="4"
+							checked="checked"
+							/>
+						No health concerns or not applicable</label></div>
+				</fieldset>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('</'+'div>');
+				/* ]]> */
+				</script>
+				<!-- </blockquote> --> </div>
+		<div class="bfQuestion form-group">
+				<label class="nohighlight h4" for="q15">
+				<strong>9.</strong>
+				In terms of education, you are:
+				</label>
+                  <select class="form-control" id="q15"
+                    name="q15"
+                      onchange="blockOrUnblock('q15', 'div_25', this.value)"
+>
+              <option value="1" 
+              >A student</option>
+              <option value="6" 
+              >Planning to return to school</option>
+              <option value="7" 
+							selected="selected"
+              >Not planning to return to school</option>
+          </select>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('<input type="hidden" name="q25show" value="0" />');
+				/* ]]> */
+				</script>
+				<noscript>
+        <div>
+				<input type="hidden" name="q25show" value="1" />
+        </div>
+				</noscript>
+			<!-- <blockquote> -->
+			<div class="indent">
+			<script>
+					/* <![CDATA[ */
+					document.write('<div id="div_25"');
+					document.write('style="display:none">');
+					/* ]]> */
+			</script>
+		<div class="bfQuestion form-group">
+				<label class="nohighlight h4" for="q25">
+				<strong>9 a.</strong>
+				What best describes your current or future educational status?
+				</label>
+                  <select class="form-control" id="q25"
+                    name="q25"
+                      onchange="blockOrUnblock('q25', 'div_26', this.value)"
+>
+              <option value="1" 
+              >A high school student</option>
+              <option value="2" 
+              >A post-secondary student (college, university)</option>
+              <option value="3" 
+              >A graduate student</option>
+              <option value="4" 
+							selected="selected"
+              >None of the above / Does not apply</option>
+          </select>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('</'+'div>');
+				/* ]]> */
+				</script>
+				<!-- </blockquote> --> </div>
+				<script>
+				/* <![CDATA[ */
+				document.write('<input type="hidden" name="q26show" value="0" />');
+				/* ]]> */
+				</script>
+				<noscript>
+        <div>
+				<input type="hidden" name="q26show" value="1" />
+        </div>
+				</noscript>
+			<!-- <blockquote> -->
+			<div class="indent">
+			<script>
+					/* <![CDATA[ */
+					document.write('<div id="div_26"');
+					document.write('style="display:none">');
+					/* ]]> */
+			</script>
+		<div class="bfQuestion form-group">
+				<label class="nohighlight h4" for="q26">
+				<strong>10b.</strong>
+				What best describes the degree you are or will be pursuing?
+				</label>
+                  <select class="form-control" id="q26"
+                    name="q26"
+>
+              <option value="1" 
+              >Masters in science or engineering</option>
+              <option value="2" 
+              >Doctorate in science or engineering</option>
+              <option value="3" 
+              >Masters in social sciences or humanities</option>
+              <option value="4" 
+              >Doctorate in social sciences or humanities</option>
+              <option value="5" 
+              >Medicine</option>
+              <option value="6" 
+              >Law</option>
+              <option value="7" 
+							selected="selected"
+              >None of the above / Does not apply</option>
+          </select>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('</'+'div>');
+				/* ]]> */
+				</script>
+				<!-- </blockquote> --> </div>
+		<div class="bfQuestion form-group">
+				<label class="nohighlight h4" for="q11">
+				<strong>10.</strong>
+				In terms of housing, you are currently:
+				</label>
+                  <select class="form-control" id="q11"
+                    name="q11"
+                      onchange="blockOrUnblock('q11', 'div_19', this.value)"
+>
+              <option value="3" 
+              >A homeowner</option>
+              <option value="1" 
+              >Renting</option>
+              <option value="4" 
+              >Residing in an assisted living facility</option>
+              <option value="5" 
+							selected="selected"
+              >Other</option>
+          </select>
+			</div>
+				<input type="hidden" name="q19show" value="1" />
+			<!-- <blockquote> -->
+			<div class="indent">
+			<script>
+					/* <![CDATA[ */
+					document.write('<div id="div_19"');
+					document.write('style="display:block">');
+					/* ]]> */
+			</script>
+		<div class="bfQuestion form-group">
+				<fieldset class="bffieldset">
+				<legend class="bflegend h4">
+					<strong>10 a.</strong>
+					In terms of housing, you are interested in:
+					<br />
+					<span class="h6">(Check all that apply)</span>
+				</legend>
+						<div class="checkbox">
+						<label class="nohighlight" for="q19_1">
+						<input type="checkbox" 
+							id="q19_1"
+							name="q19"
+									onclick="uncheckNegativeOption('q19', '2', null, 1, null, this.checked)" 
+							value="1"
+							/>
+						Purchasing a home</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q19_3">
+						<input type="checkbox" 
+							id="q19_3"
+							name="q19"
+									onclick="uncheckNegativeOption('q19', '2', null, 3, null, this.checked)" 
+							value="3"
+							/>
+						Renting</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q19_4">
+						<input type="checkbox" 
+							id="q19_4"
+							name="q19"
+									onclick="uncheckNegativeOption('q19', '2', null, 4, null, this.checked)" 
+							value="4"
+							/>
+						Residing in an assisted living facility</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q19_5">
+						<input type="checkbox" 
+							id="q19_5"
+							name="q19"
+									onclick="uncheckNegativeOption('q19', '2', null, 5, null, this.checked)" 
+							value="5"
+							/>
+						Making repairs or other modifications to your home or building</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q19_2">
+						<input type="checkbox" 
+							id="q19_2"
+							name="q19"
+									onclick="uncheckAllExceptNegativeOption('q19','2', null, 2, null, this.checked)" 
+							value="2"
+							checked="checked"
+							/>
+						None of the above</label></div>
+				</fieldset>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('</'+'div>');
+				/* ]]> */
+				</script>
+				<!-- </blockquote> --> </div>
+		<div class="bfQuestion form-group">
+				<fieldset class="bffieldset">
+				<legend class="bflegend h4">
+					<strong>11.</strong>
+					Are any members of your immediate family recently deceased?
+					<br />
+					<span class="h6">(Check all that apply)</span>
+				</legend>
+						<div class="checkbox">
+						<label class="nohighlight" for="q5_1">
+						<input type="checkbox" 
+							id="q5_1"
+							name="q5"
+									onclick="uncheckNegativeOption('q5', '4', 'div_21', 1, 'block', this.checked)" 
+							value="1"
+							/>
+						Spouse</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q5_2">
+						<input type="checkbox" 
+							id="q5_2"
+							name="q5"
+									onclick="uncheckNegativeOption('q5', '4', 'div_21', 2, 'block', this.checked)" 
+							value="2"
+							/>
+						Parent(s)</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q5_3">
+						<input type="checkbox" 
+							id="q5_3"
+							name="q5"
+									onclick="uncheckNegativeOption('q5', '4', 'div_21', 3, 'block', this.checked)" 
+							value="3"
+							/>
+						Child(ren)</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q5_5">
+						<input type="checkbox" 
+							id="q5_5"
+							name="q5"
+									onclick="uncheckNegativeOption('q5', '4', 'div_21', 5, 'none', this.checked)" 
+							value="5"
+							/>
+						No, but a family member is gravely ill and at risk of dying</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q5_4">
+						<input type="checkbox" 
+							id="q5_4"
+							name="q5"
+									onclick="uncheckAllExceptNegativeOption('q5','4', 'div_21', 4, 'none', this.checked)" 
+							value="4"
+							checked="checked"
+							/>
+						None of the above</label></div>
+				</fieldset>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('<input type="hidden" name="q21show" value="0" />');
+				/* ]]> */
+				</script>
+				<noscript>
+        <div>
+				<input type="hidden" name="q21show" value="1" />
+        </div>
+				</noscript>
+			<!-- <blockquote> -->
+			<div class="indent">
+			<script>
+					/* <![CDATA[ */
+					document.write('<div id="div_21"');
+					document.write('style="display:none">');
+					/* ]]> */
+			</script>
+		<div class="bfQuestion form-group">
+				<label class="nohighlight h4" for="q21">
+				<strong>10&nbsp;a.</strong>
+				If members of your immediate family are recently deceased, did they perform <b>military service</b> for Canada?
+				</label>
+                  <select class="form-control" id="q21"
+                    name="q21"
+>
+              <option value="1" 
+              >Yes</option>
+              <option value="2" 
+							selected="selected"
+              >No / Does not apply</option>
+          </select>
+			</div>
+				<script>
+				/* <![CDATA[ */
+				document.write('</'+'div>');
+				/* ]]> */
+				</script>
+				<!-- </blockquote> --> </div>
+		<div class="bfQuestion form-group">
+				<fieldset class="bffieldset">
+				<legend class="bflegend h4">
+					<strong>12.</strong>
+					I am...
+					<br />
+					<span class="h6">(Check all that apply)</span>
+				</legend>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_6">
+						<input type="checkbox" 
+							id="q17_6"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 6, null, this.checked)" 
+							value="6"
+							/>
+						a newcomer to Canada</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_17">
+						<input type="checkbox" 
+							id="q17_17"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 17, null, this.checked)" 
+							value="17"
+							/>
+						an apprentice</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_10">
+						<input type="checkbox" 
+							id="q17_10"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 10, null, this.checked)" 
+							value="10"
+							/>
+						in need of legal help</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_11">
+						<input type="checkbox" 
+							id="q17_11"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 11, null, this.checked)" 
+							value="11"
+							/>
+						interested in starting a business</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_16">
+						<input type="checkbox" 
+							id="q17_16"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 16, null, this.checked)" 
+							value="16"
+							/>
+						receiving or repaying student loans</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_18">
+						<input type="checkbox" 
+							id="q17_18"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 18, null, this.checked)" 
+							value="18"
+							/>
+						an Aboriginal person</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_21">
+						<input type="checkbox" 
+							id="q17_21"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 21, null, this.checked)" 
+							value="21"
+							/>
+						interested in training and career counselling</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_12">
+						<input type="checkbox" 
+							id="q17_12"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 12, null, this.checked)" 
+							value="12"
+							/>
+						considering separation / divorce</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_13">
+						<input type="checkbox" 
+							id="q17_13"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 13, null, this.checked)" 
+							value="13"
+							/>
+						living in a rural or remote area</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_20">
+						<input type="checkbox" 
+							id="q17_20"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 20, null, this.checked)" 
+							value="20"
+							/>
+						a veteran</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_4">
+						<input type="checkbox" 
+							id="q17_4"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 4, null, this.checked)" 
+							value="4"
+							/>
+						a fisher</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_5">
+						<input type="checkbox" 
+							id="q17_5"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 5, null, this.checked)" 
+							value="5"
+							/>
+						a health care worker</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_9">
+						<input type="checkbox" 
+							id="q17_9"
+							name="q17"
+									onclick="uncheckNegativeOption('q17', '19', null, 9, null, this.checked)" 
+							value="9"
+							/>
+						a victim of crime</label></div>
+						<div class="checkbox">
+						<label class="nohighlight" for="q17_19">
+						<input type="checkbox" 
+							id="q17_19"
+							name="q17"
+									onclick="uncheckAllExceptNegativeOption('q17','19', null, 19, null, this.checked)" 
+							value="19"
+							checked="checked"
+							/>
+						none of the above</label></div>
+				</fieldset>
+			</div>
+<p id="bf-msg-submit">
+		The Benefits Finder does not require or collect any personal information.
+</p>
+	<div class="aligncenter">
+		<input type="submit" class="btn btn-primary btn-lg" name="action" value="Submit" aria-describedby="bf-msg-submit" />
+	</div>
+    </div>
+		</form>
+		<div id="def-preFooter">
+<div class="row pagedetails">
+<div class="col-sm-6 col-lg-4 mrgn-tp-sm">
+<a href="https://www.canada.ca/en/report-problem.html" class="btn btn-default btn-block">Report a problem or mistake on this page</a>
+</div>
+<div class="col-sm-3 mrgn-tp-sm pull-right">
+<div class="wb-share" data-wb-share='{"lnkClass": "btn btn-default btn-block"}'></div>
+</div>
+<div class="datemod col-xs-12 mrgn-tp-lg">
+<dl id="wb-dtmd">
+<dt>Date Modified:</dt>
+<dd><time property="dateModified">2018-03-13</time></dd>
+</dl>
+</div>
+</div>
+</div>
+			<script type="text/javascript">
+				var defPreFooter = document.getElementById("def-preFooter");
+				defPreFooter.outerHTML = wet.builder.preFooter({
+					cdnEnv: "prod",
+					showShare: false,
+                    showFeedback: false,
+					dateModified: "2018-03-13"
+				});
+			</script>
+</main>
+
 
 
 <footer role="contentinfo" id="wb-info">
