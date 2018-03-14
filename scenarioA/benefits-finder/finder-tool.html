@@ -160,7 +160,7 @@ p, li {max-width: 65em;}
 		<p>
 		Answer the questions below to get a customized list of benefits for which you may be eligible.  The Benefits Finder may suggest benefits from federal, provincial or territorial governments, and does not collect or track your information. The more questions you answer, the more customized your results will be.
 		</p>
-<form data-persist="garlic" id='bf-qform' action='' method='put' onSubmit="isItCaregiver()" >
+<form data-persist="garlic" id='bf-qform' action='#' method='get' onSubmit="isItCaregiver()" >
       <div>
 <input type="hidden" name="bfemail" value="" />
 <script>
@@ -168,17 +168,18 @@ p, li {max-width: 65em;}
 
 function isItCaregiver () {
 	var qForm = document.getElementById('bf-qform');
-	alert("hi");
-	alert(qForm.getElementByID[careQ].value);
-	if (qForm.elements[careQ].value = '1') {
-		alert('1');
+  var newWin = "";
+	if (document.getElementById('careQ').value == '1') {
+		// alert('Yes caregiving');
+    newWin = "finder-yescaregiving.html";
 	} else {
-		alert('2');
+		// alert('No caregiving');
+    newWin = "finder-nocaregiving.html";
 	}
-	return false;
+  window.location = newWin;
 }
 
-function setToDefault(_inputName, _defaultValue) { 
+function setToDefault(_inputName, _defaultValue) {
     var qForm = document.getElementById('bf-qform');
 	if(qForm != null){
 	    if (qForm.elements[_inputName].length == null) {
@@ -195,267 +196,10 @@ function setToDefault(_inputName, _defaultValue) {
 		}
 	}
 }
-function blockOrUnblock(_inputName, _questionDivId, _value) { 
-	var qForm = document.getElementById('bf-qform');
-	if(qForm != null){
-			if (_inputName == "q15") {
-					if (_value == "1") {
-						document.getElementById("div_25").style.display = "block";
-							qForm.q25show.value="1";
-					}
-					if (_value == "6") {
-						document.getElementById("div_25").style.display = "block";
-							qForm.q25show.value="1";
-					}
-					if (_value == "7") {
-						document.getElementById("div_25").style.display = "none";
-							setToDefault('q25','4');
-							qForm.q25show.value="0";
-					}
-					if (_value == "1") {
-						document.getElementById("div_26").style.display = "none";
-							setToDefault('q26','7');
-							qForm.q26show.value="0";
-					}
-					if (_value == "6") {
-						document.getElementById("div_26").style.display = "none";
-							setToDefault('q26','7');
-							qForm.q26show.value="0";
-					}
-					if (_value == "7") {
-						document.getElementById("div_26").style.display = "none";
-							setToDefault('q26','7');
-							qForm.q26show.value="0";
-					}
-			}
-			if (_inputName == "q5") {
-					if (_value == "1") {
-						document.getElementById("div_21").style.display = "block";
-							qForm.q21show.value="1";
-					}
-					if (_value == "2") {
-						document.getElementById("div_21").style.display = "block";
-							qForm.q21show.value="1";
-					}
-					if (_value == "3") {
-						document.getElementById("div_21").style.display = "block";
-							qForm.q21show.value="1";
-					}
-					if (_value == "4") {
-						document.getElementById("div_21").style.display = "none";
-							setToDefault('q21','2');
-							qForm.q21show.value="0";
-					}
-					if (_value == "5") {
-						document.getElementById("div_21").style.display = "none";
-							setToDefault('q21','2');
-							qForm.q21show.value="0";
-					}
-			}
-			if (_inputName == "q25") {
-					if (_value == "1") {
-						document.getElementById("div_26").style.display = "none";
-							setToDefault('q26','7');
-							qForm.q26show.value="0";
-					}
-					if (_value == "2") {
-						document.getElementById("div_26").style.display = "none";
-							setToDefault('q26','7');
-							qForm.q26show.value="0";
-					}
-					if (_value == "3") {
-						document.getElementById("div_26").style.display = "block";
-							qForm.q26show.value="1";
-					}
-					if (_value == "4") {
-						document.getElementById("div_26").style.display = "none";
-							setToDefault('q26','7');
-							qForm.q26show.value="0";
-					}
-			}
-			if (_inputName == "q11") {
-					if (_value == "1") {
-						document.getElementById("div_19").style.display = "block";
-							qForm.q19show.value="1";
-					}
-					if (_value == "2") {
-						document.getElementById("div_19").style.display = "block";
-							qForm.q19show.value="1";
-					}
-					if (_value == "3") {
-						document.getElementById("div_19").style.display = "block";
-							qForm.q19show.value="1";
-					}
-					if (_value == "4") {
-						document.getElementById("div_19").style.display = "block";
-							qForm.q19show.value="1";
-					}
-					if (_value == "5") {
-						document.getElementById("div_19").style.display = "block";
-							qForm.q19show.value="1";
-					}
-			}
-			if (_inputName == "q22") {
-					if (_value == "1") {
-						document.getElementById("div_24").style.display = "none";
-							setToDefault('q24','3');
-							qForm.q24show.value="0";
-					}
-					if (_value == "2") {
-						document.getElementById("div_24").style.display = "block";
-							qForm.q24show.value="1";
-					}
-					if (_value == "3") {
-						document.getElementById("div_24").style.display = "block";
-							qForm.q24show.value="1";
-					}
-					if (_value == "4") {
-						document.getElementById("div_24").style.display = "block";
-							qForm.q24show.value="1";
-					}
-					if (_value == "1") {
-						document.getElementById("div_27").style.display = "none";
-							setToDefault('q27','');
-							qForm.q27show.value="0";
-					}
-					if (_value == "2") {
-						document.getElementById("div_27").style.display = "block";
-							qForm.q27show.value="1";
-					}
-					if (_value == "3") {
-						document.getElementById("div_27").style.display = "none";
-							setToDefault('q27','');
-							qForm.q27show.value="0";
-					}
-					if (_value == "4") {
-						document.getElementById("div_27").style.display = "none";
-							setToDefault('q27','');
-							qForm.q27show.value="0";
-					}
-			}
-			if (_inputName == "q18") {
-					if (_value == "4") {
-						document.getElementById("div_20").style.display = "block";
-							qForm.q20show.value="1";
-					}
-					if (_value == "1") {
-						document.getElementById("div_20").style.display = "block";
-							qForm.q20show.value="1";
-					}
-					if (_value == "3") {
-						document.getElementById("div_20").style.display = "block";
-							qForm.q20show.value="1";
-					}
-					if (_value == "7") {
-						document.getElementById("div_20").style.display = "block";
-							qForm.q20show.value="1";
-					}
-					if (_value == "2") {
-						document.getElementById("div_20").style.display = "block";
-							qForm.q20show.value="1";
-					}
-					if (_value == "6") {
-						document.getElementById("div_20").style.display = "block";
-							qForm.q20show.value="1";
-					}
-					if (_value == "5") {
-						document.getElementById("div_20").style.display = "none";
-							setToDefault('q20','4');
-							qForm.q20show.value="0";
-					}
-			}
-			if (_inputName == "q28") {
-					if (_value == "1") {
-						document.getElementById("div_18").style.display = "block";
-							qForm.q18show.value="1";
-					}
-					if (_value == "2") {
-						document.getElementById("div_18").style.display = "none";
-							setToDefault('q18','');
-							qForm.q18show.value="0";
-					}
-					if (_value == "3") {
-						document.getElementById("div_18").style.display = "block";
-							qForm.q18show.value="1";
-					}
-					if (_value == "4") {
-						document.getElementById("div_18").style.display = "none";
-							setToDefault('q18','');
-							qForm.q18show.value="0";
-					}
-					if (_value == "1") {
-						document.getElementById("div_20").style.display = "block";
-							qForm.q20show.value="1";
-					}
-					if (_value == "2") {
-						document.getElementById("div_20").style.display = "none";
-							setToDefault('q20','4');
-							qForm.q20show.value="0";
-					}
-					if (_value == "3") {
-						document.getElementById("div_20").style.display = "block";
-							qForm.q20show.value="1";
-					}
-					if (_value == "4") {
-						document.getElementById("div_20").style.display = "none";
-							setToDefault('q20','4');
-							qForm.q20show.value="0";
-					}
-			}
-	}
-} 
-function ensureSomethingChecked(_inputName, _negativeOptionValue, _questionDivId, _value, _blockOrUnblock, _isChecked) {
-  var qForm = document.getElementById('bf-qform');
-  if(qForm != null){
-	  var negativeOptionIndex = -1;
-	  var firstIndexChecked = -1;
-	  for (var i = (qForm.elements[_inputName].length - 1); i >= 0; i--) {
-	    if (qForm.elements[_inputName][i].value.toString() == _negativeOptionValue.toString()) {
-			negativeOptionIndex = i;
-		}
-	  	if (qForm.elements[_inputName][i].checked) {
-			firstIndexChecked = i;
-		}
-	  }
-	  if (firstIndexChecked == -1) {
-		qForm.elements[_inputName][negativeOptionIndex].checked = true;
-		if (_questionDivId != null) {
-			blockOrUnblock(_inputName, _questionDivId, _negativeOptionValue);
-		}
-	  } else {
-	  	if (_questionDivId != null) {
-			blockOrUnblock(_inputName, _questionDivId, qForm.elements[_inputName][firstIndexChecked].value);
-		}
-	  }
-  }
-}
-function uncheckAllExceptNegativeOption(_inputName, _negativeOptionValue, _questionDivId, _value, _blockOrUnblock, _isChecked) {
-  var qForm = document.getElementById('bf-qform');
-  if(qForm != null){
-	  for (var i=0; i < qForm.elements[_inputName].length;i++) {
-	    if ((qForm.elements[_inputName][i].value.toString() != _negativeOptionValue.toString()) && (qForm.elements[_inputName][i].checked == true )) {
-		   qForm.elements[_inputName][i].checked = false;
-		}
-	  }
-	  ensureSomethingChecked(_inputName, _negativeOptionValue, _questionDivId, _value, _blockOrUnblock, _isChecked);
-  }
-}
-function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId, _value, _blockOrUnblock, _isChecked) {
-  var qForm = document.getElementById('bf-qform');
-  if(qForm != null){
-	  for (var i=0; i < qForm.elements[_inputName].length;i++) {
-	    if ((qForm.elements[_inputName][i].value.toString() == _negativeOptionValue.toString()) && (qForm.elements[_inputName][i].checked == true )) {
-		   qForm.elements[_inputName][i].checked = false;
-		}
-	  }
-	  ensureSomethingChecked(_inputName, _negativeOptionValue, _questionDivId, _value, _blockOrUnblock, _isChecked);
-  }
-}
-/* ]]> */
 </script>
 <input type="hidden" name="lang" value="eng" />
 <input type="hidden" name="ws" value="true" />
-<!-- 
+<!--
 <input type="hidden" name="geo" value="" />
 -->
 
@@ -495,14 +239,14 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
                     name="q22"
                       onchange="blockOrUnblock('q22', 'div_24', this.value)"
 >
-              <option value="1" 
+              <option value="1"
 							selected="selected"
               >Single</option>
-              <option value="2" 
+              <option value="2"
               >Married / Living common-law</option>
-              <option value="3" 
+              <option value="3"
               >Separated / Divorced</option>
-              <option value="4" 
+              <option value="4"
               >Widowed</option>
           </select>
 			</div>
@@ -565,28 +309,28 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 				</legend>
 						<div class="checkbox">
 						<label class="nohighlight" for="q24_1">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q24_1"
 							name="q24"
-									onclick="uncheckNegativeOption('q24', '3', null, 1, null, this.checked)" 
+									onclick="uncheckNegativeOption('q24', '3', null, 1, null, this.checked)"
 							value="1"
 							/>
 						Separated / Divorced</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q24_2">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q24_2"
 							name="q24"
-									onclick="uncheckNegativeOption('q24', '3', null, 2, null, this.checked)" 
+									onclick="uncheckNegativeOption('q24', '3', null, 2, null, this.checked)"
 							value="2"
 							/>
 						Widowed</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q24_3">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q24_3"
 							name="q24"
-									onclick="uncheckAllExceptNegativeOption('q24','3', null, 3, null, this.checked)" 
+									onclick="uncheckAllExceptNegativeOption('q24','3', null, 3, null, this.checked)"
 							value="3"
 							checked="checked"
 							/>
@@ -607,31 +351,31 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
                   <select class="form-control" id="q23"
                     name="q23"
 >
-              <option value="1" 
+              <option value="1"
               >Yes</option>
-              <option value="2" 
+              <option value="2"
               >No</option>
-              <option value="3" 
+              <option value="3"
 							selected="selected"
               >Not sure</option>
           </select>
 			</div>
-			
+
 			<div class="bfQuestion form-group">
 		<label class="nohighlight h4" for="careQ">
 		<strong>5.</strong>
-		Are you missing or will you miss work to care for someone who is ill?
+		Are you missing work or will you miss work to care for someone who is ill?
 		</label>
 		  <select class="form-control" id="careQ"
 			name="careQ"
 >
-	  <option value="1" 
+	  <option value="1"
 	  >Yes</option>
 	  <option value="2" selected="selected"
 	  >No</option>
   </select>
  </div>
- 
+
 		<div class="bfQuestion form-group">
 				<label class="nohighlight h4" for="q2">
 				<strong>6.</strong>
@@ -640,12 +384,12 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
                   <select class="form-control" id="q2"
                     name="q2"
 >
-              <option value="1" 
+              <option value="1"
 							selected="selected"
               >Employed / Self-employed</option>
-              <option value="2" 
+              <option value="2"
               >Unemployed, seeking work</option>
-              <option value="3" 
+              <option value="3"
               >Other</option>
           </select>
 			</div>
@@ -659,73 +403,73 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 				</legend>
 						<div class="checkbox">
 						<label class="nohighlight" for="q4_1">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q4_1"
 							name="q4"
-									onclick="uncheckNegativeOption('q4', '4', null, 1, null, this.checked)" 
+									onclick="uncheckNegativeOption('q4', '4', null, 1, null, this.checked)"
 							value="1"
 							/>
 						Living with a mental or physical disability</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q4_2">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q4_2"
 							name="q4"
-									onclick="uncheckNegativeOption('q4', '4', null, 2, null, this.checked)" 
+									onclick="uncheckNegativeOption('q4', '4', null, 2, null, this.checked)"
 							value="2"
 							/>
 						Chronically or seriously ill</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q4_8">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q4_8"
 							name="q4"
-									onclick="uncheckNegativeOption('q4', '4', null, 8, null, this.checked)" 
+									onclick="uncheckNegativeOption('q4', '4', null, 8, null, this.checked)"
 							value="8"
 							/>
 						Experiencing mental illness</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q4_5">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q4_5"
 							name="q4"
-									onclick="uncheckNegativeOption('q4', '4', null, 5, null, this.checked)" 
+									onclick="uncheckNegativeOption('q4', '4', null, 5, null, this.checked)"
 							value="5"
 							/>
 						Living with an addiction</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q4_6">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q4_6"
 							name="q4"
-									onclick="uncheckNegativeOption('q4', '4', null, 6, null, this.checked)" 
+									onclick="uncheckNegativeOption('q4', '4', null, 6, null, this.checked)"
 							value="6"
 							/>
 						In need of counselling</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q4_3">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q4_3"
 							name="q4"
-									onclick="uncheckNegativeOption('q4', '4', null, 3, null, this.checked)" 
+									onclick="uncheckNegativeOption('q4', '4', null, 3, null, this.checked)"
 							value="3"
 							/>
 						In need of dental surgery, prescription drugs or lenses</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q4_7">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q4_7"
 							name="q4"
-									onclick="uncheckNegativeOption('q4', '4', null, 7, null, this.checked)" 
+									onclick="uncheckNegativeOption('q4', '4', null, 7, null, this.checked)"
 							value="7"
 							/>
 						In need of medical equipment or other assistance</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q4_4">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q4_4"
 							name="q4"
-									onclick="uncheckAllExceptNegativeOption('q4','4', null, 4, null, this.checked)" 
+									onclick="uncheckAllExceptNegativeOption('q4','4', null, 4, null, this.checked)"
 							value="4"
 							checked="checked"
 							/>
@@ -742,37 +486,37 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 				</legend>
 						<div class="checkbox">
 						<label class="nohighlight" for="q28_1">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q28_1"
 							name="q28"
-									onclick="uncheckNegativeOption('q28', '4', 'div_18', 1, 'block', this.checked)" 
+									onclick="uncheckNegativeOption('q28', '4', 'div_18', 1, 'block', this.checked)"
 							value="1"
 							/>
 						Yes</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q28_3">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q28_3"
 							name="q28"
-									onclick="uncheckNegativeOption('q28', '4', 'div_18', 3, 'block', this.checked)" 
+									onclick="uncheckNegativeOption('q28', '4', 'div_18', 3, 'block', this.checked)"
 							value="3"
 							/>
 						I am adopting or I am a foster parent</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q28_2">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q28_2"
 							name="q28"
-									onclick="uncheckNegativeOption('q28', '4', 'div_18', 2, 'none', this.checked)" 
+									onclick="uncheckNegativeOption('q28', '4', 'div_18', 2, 'none', this.checked)"
 							value="2"
 							/>
 						I am expecting</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q28_4">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q28_4"
 							name="q28"
-									onclick="uncheckAllExceptNegativeOption('q28','4', 'div_18', 4, 'none', this.checked)" 
+									onclick="uncheckAllExceptNegativeOption('q28','4', 'div_18', 4, 'none', this.checked)"
 							value="4"
 							checked="checked"
 							/>
@@ -807,7 +551,7 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 				</legend>
 						<div class="checkbox">
 						<label class="nohighlight" for="q18_1">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q18_1"
 							name="q18"
 									onclick="blockOrUnblock('q20', 'div_20', '4')"
@@ -816,7 +560,7 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 						Less than 12 months old</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q18_3">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q18_3"
 							name="q18"
 									onclick="blockOrUnblock('q20', 'div_20', '4')"
@@ -825,7 +569,7 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 						Between the ages of 1 and 6</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q18_7">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q18_7"
 							name="q18"
 									onclick="blockOrUnblock('q20', 'div_20', '4')"
@@ -834,7 +578,7 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 						Between the ages of 7 and 12</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q18_8">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q18_8"
 							name="q18"
 							value="8"
@@ -842,7 +586,7 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 						Between the ages of 13 and 17</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q18_2">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q18_2"
 							name="q18"
 									onclick="blockOrUnblock('q20', 'div_20', '4')"
@@ -851,7 +595,7 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 						18 years of age or older</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q18_6">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q18_6"
 							name="q18"
 									onclick="blockOrUnblock('q20', 'div_20', '4')"
@@ -860,7 +604,7 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 						My child or children are independent</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q18_10">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q18_10"
 							name="q18"
 							value="10"
@@ -902,73 +646,73 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 				</legend>
 						<div class="checkbox">
 						<label class="nohighlight" for="q20_1">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q20_1"
 							name="q20"
-									onclick="uncheckNegativeOption('q20', '4', null, 1, null, this.checked)" 
+									onclick="uncheckNegativeOption('q20', '4', null, 1, null, this.checked)"
 							value="1"
 							/>
 						Living with a mental or physical disability</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q20_2">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q20_2"
 							name="q20"
-									onclick="uncheckNegativeOption('q20', '4', null, 2, null, this.checked)" 
+									onclick="uncheckNegativeOption('q20', '4', null, 2, null, this.checked)"
 							value="2"
 							/>
 						Chronically or seriously ill</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q20_8">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q20_8"
 							name="q20"
-									onclick="uncheckNegativeOption('q20', '4', null, 8, null, this.checked)" 
+									onclick="uncheckNegativeOption('q20', '4', null, 8, null, this.checked)"
 							value="8"
 							/>
 						Experiencing mental illness</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q20_5">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q20_5"
 							name="q20"
-									onclick="uncheckNegativeOption('q20', '4', null, 5, null, this.checked)" 
+									onclick="uncheckNegativeOption('q20', '4', null, 5, null, this.checked)"
 							value="5"
 							/>
 						Living with an addiction</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q20_6">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q20_6"
 							name="q20"
-									onclick="uncheckNegativeOption('q20', '4', null, 6, null, this.checked)" 
+									onclick="uncheckNegativeOption('q20', '4', null, 6, null, this.checked)"
 							value="6"
 							/>
 						In need of counselling</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q20_3">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q20_3"
 							name="q20"
-									onclick="uncheckNegativeOption('q20', '4', null, 3, null, this.checked)" 
+									onclick="uncheckNegativeOption('q20', '4', null, 3, null, this.checked)"
 							value="3"
 							/>
 						In need of dental surgery, prescription drugs or lenses</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q20_9">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q20_9"
 							name="q20"
-									onclick="uncheckNegativeOption('q20', '4', null, 9, null, this.checked)" 
+									onclick="uncheckNegativeOption('q20', '4', null, 9, null, this.checked)"
 							value="9"
 							/>
 						In need of medical equipment or other assistance</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q20_4">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q20_4"
 							name="q20"
-									onclick="uncheckAllExceptNegativeOption('q20','4', null, 4, null, this.checked)" 
+									onclick="uncheckAllExceptNegativeOption('q20','4', null, 4, null, this.checked)"
 							value="4"
 							checked="checked"
 							/>
@@ -990,11 +734,11 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
                     name="q15"
                       onchange="blockOrUnblock('q15', 'div_25', this.value)"
 >
-              <option value="1" 
+              <option value="1"
               >A student</option>
-              <option value="6" 
+              <option value="6"
               >Planning to return to school</option>
-              <option value="7" 
+              <option value="7"
 							selected="selected"
               >Not planning to return to school</option>
           </select>
@@ -1026,13 +770,13 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
                     name="q25"
                       onchange="blockOrUnblock('q25', 'div_26', this.value)"
 >
-              <option value="1" 
+              <option value="1"
               >A high school student</option>
-              <option value="2" 
+              <option value="2"
               >A post-secondary student (college, university)</option>
-              <option value="3" 
+              <option value="3"
               >A graduate student</option>
-              <option value="4" 
+              <option value="4"
 							selected="selected"
               >None of the above / Does not apply</option>
           </select>
@@ -1069,19 +813,19 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
                   <select class="form-control" id="q26"
                     name="q26"
 >
-              <option value="1" 
+              <option value="1"
               >Masters in science or engineering</option>
-              <option value="2" 
+              <option value="2"
               >Doctorate in science or engineering</option>
-              <option value="3" 
+              <option value="3"
               >Masters in social sciences or humanities</option>
-              <option value="4" 
+              <option value="4"
               >Doctorate in social sciences or humanities</option>
-              <option value="5" 
+              <option value="5"
               >Medicine</option>
-              <option value="6" 
+              <option value="6"
               >Law</option>
-              <option value="7" 
+              <option value="7"
 							selected="selected"
               >None of the above / Does not apply</option>
           </select>
@@ -1101,13 +845,13 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
                     name="q11"
                       onchange="blockOrUnblock('q11', 'div_19', this.value)"
 >
-              <option value="3" 
+              <option value="3"
               >A homeowner</option>
-              <option value="1" 
+              <option value="1"
               >Renting</option>
-              <option value="4" 
+              <option value="4"
               >Residing in an assisted living facility</option>
-              <option value="5" 
+              <option value="5"
 							selected="selected"
               >Other</option>
           </select>
@@ -1131,46 +875,46 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 				</legend>
 						<div class="checkbox">
 						<label class="nohighlight" for="q19_1">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q19_1"
 							name="q19"
-									onclick="uncheckNegativeOption('q19', '2', null, 1, null, this.checked)" 
+									onclick="uncheckNegativeOption('q19', '2', null, 1, null, this.checked)"
 							value="1"
 							/>
 						Purchasing a home</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q19_3">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q19_3"
 							name="q19"
-									onclick="uncheckNegativeOption('q19', '2', null, 3, null, this.checked)" 
+									onclick="uncheckNegativeOption('q19', '2', null, 3, null, this.checked)"
 							value="3"
 							/>
 						Renting</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q19_4">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q19_4"
 							name="q19"
-									onclick="uncheckNegativeOption('q19', '2', null, 4, null, this.checked)" 
+									onclick="uncheckNegativeOption('q19', '2', null, 4, null, this.checked)"
 							value="4"
 							/>
 						Residing in an assisted living facility</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q19_5">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q19_5"
 							name="q19"
-									onclick="uncheckNegativeOption('q19', '2', null, 5, null, this.checked)" 
+									onclick="uncheckNegativeOption('q19', '2', null, 5, null, this.checked)"
 							value="5"
 							/>
 						Making repairs or other modifications to your home or building</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q19_2">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q19_2"
 							name="q19"
-									onclick="uncheckAllExceptNegativeOption('q19','2', null, 2, null, this.checked)" 
+									onclick="uncheckAllExceptNegativeOption('q19','2', null, 2, null, this.checked)"
 							value="2"
 							checked="checked"
 							/>
@@ -1193,46 +937,46 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 				</legend>
 						<div class="checkbox">
 						<label class="nohighlight" for="q5_1">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q5_1"
 							name="q5"
-									onclick="uncheckNegativeOption('q5', '4', 'div_21', 1, 'block', this.checked)" 
+									onclick="uncheckNegativeOption('q5', '4', 'div_21', 1, 'block', this.checked)"
 							value="1"
 							/>
 						Spouse</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q5_2">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q5_2"
 							name="q5"
-									onclick="uncheckNegativeOption('q5', '4', 'div_21', 2, 'block', this.checked)" 
+									onclick="uncheckNegativeOption('q5', '4', 'div_21', 2, 'block', this.checked)"
 							value="2"
 							/>
 						Parent(s)</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q5_3">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q5_3"
 							name="q5"
-									onclick="uncheckNegativeOption('q5', '4', 'div_21', 3, 'block', this.checked)" 
+									onclick="uncheckNegativeOption('q5', '4', 'div_21', 3, 'block', this.checked)"
 							value="3"
 							/>
 						Child(ren)</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q5_5">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q5_5"
 							name="q5"
-									onclick="uncheckNegativeOption('q5', '4', 'div_21', 5, 'none', this.checked)" 
+									onclick="uncheckNegativeOption('q5', '4', 'div_21', 5, 'none', this.checked)"
 							value="5"
 							/>
 						No, but a family member is gravely ill and at risk of dying</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q5_4">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q5_4"
 							name="q5"
-									onclick="uncheckAllExceptNegativeOption('q5','4', 'div_21', 4, 'none', this.checked)" 
+									onclick="uncheckAllExceptNegativeOption('q5','4', 'div_21', 4, 'none', this.checked)"
 							value="4"
 							checked="checked"
 							/>
@@ -1265,9 +1009,9 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
                   <select class="form-control" id="q21"
                     name="q21"
 >
-              <option value="1" 
+              <option value="1"
               >Yes</option>
-              <option value="2" 
+              <option value="2"
 							selected="selected"
               >No / Does not apply</option>
           </select>
@@ -1288,127 +1032,127 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 				</legend>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_6">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_6"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 6, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 6, null, this.checked)"
 							value="6"
 							/>
 						a newcomer to Canada</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_17">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_17"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 17, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 17, null, this.checked)"
 							value="17"
 							/>
 						an apprentice</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_10">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_10"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 10, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 10, null, this.checked)"
 							value="10"
 							/>
 						in need of legal help</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_11">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_11"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 11, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 11, null, this.checked)"
 							value="11"
 							/>
 						interested in starting a business</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_16">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_16"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 16, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 16, null, this.checked)"
 							value="16"
 							/>
 						receiving or repaying student loans</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_18">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_18"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 18, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 18, null, this.checked)"
 							value="18"
 							/>
 						an Aboriginal person</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_21">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_21"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 21, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 21, null, this.checked)"
 							value="21"
 							/>
 						interested in training and career counselling</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_12">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_12"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 12, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 12, null, this.checked)"
 							value="12"
 							/>
 						considering separation / divorce</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_13">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_13"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 13, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 13, null, this.checked)"
 							value="13"
 							/>
 						living in a rural or remote area</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_20">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_20"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 20, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 20, null, this.checked)"
 							value="20"
 							/>
 						a veteran</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_4">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_4"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 4, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 4, null, this.checked)"
 							value="4"
 							/>
 						a fisher</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_5">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_5"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 5, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 5, null, this.checked)"
 							value="5"
 							/>
 						a health care worker</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_9">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_9"
 							name="q17"
-									onclick="uncheckNegativeOption('q17', '19', null, 9, null, this.checked)" 
+									onclick="uncheckNegativeOption('q17', '19', null, 9, null, this.checked)"
 							value="9"
 							/>
 						a victim of crime</label></div>
 						<div class="checkbox">
 						<label class="nohighlight" for="q17_19">
-						<input type="checkbox" 
+						<input type="checkbox"
 							id="q17_19"
 							name="q17"
-									onclick="uncheckAllExceptNegativeOption('q17','19', null, 19, null, this.checked)" 
+									onclick="uncheckAllExceptNegativeOption('q17','19', null, 19, null, this.checked)"
 							value="19"
 							checked="checked"
 							/>
@@ -1419,7 +1163,9 @@ function uncheckNegativeOption(_inputName, _negativeOptionValue, _questionDivId,
 		The Benefits Finder does not require or collect any personal information.
 </p>
 	<div class="aligncenter">
-		<input type="submit" class="btn btn-primary btn-lg" name="action" value="Submit" aria-describedby="bf-msg-submit" />
+		<!-- <input type="submit" class="btn btn-primary btn-lg" name="action" value="Submit" aria-describedby="bf-msg-submit" /> -->
+    <a href="#" onClick="isItCaregiver()" class="btn btn-primary active" style="margin-top: 15px; margin-bottom: 25px; font-size: 20px !important;">Submit</a></p>
+
 	</div>
     </div>
 		</form>
