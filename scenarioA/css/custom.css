@@ -40,7 +40,7 @@ font-family: 'Open Sans', sans-serif;
 
 
 
-h5, legend.h5 {
+h5, legend.h5, legend {
 
 	font-size: 17px !important;
 	font-weight: 700 !important;
